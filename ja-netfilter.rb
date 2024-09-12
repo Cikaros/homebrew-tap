@@ -13,11 +13,11 @@ class JaNetfilter < Formula
   end
 
   def post_install
-    system "sudo", "bash", libexec"/scripts/install.sh"
+    system "bash", "#{opt_libexec}/scripts/install.sh"
   end
 
   def pre_uninstall
-    system "sudo", "bash", libexec"/scripts/uninstall.sh"
+    system "bash", "#{opt_libexec}/scripts/uninstall.sh"
   end
 
 end
