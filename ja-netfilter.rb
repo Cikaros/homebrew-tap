@@ -8,6 +8,10 @@ class JaNetfilter < Formula
   desc "JetBrains' dragon slayer"
   homepage "https://cikaros.top"
 
+  def install
+    libexec.install Dir["*"]
+  end
+
   def post_install
     system_command "#{HOMEBREW_PREFIX}/ja-netfilter/scripts/install.sh", sudo: true
   end
