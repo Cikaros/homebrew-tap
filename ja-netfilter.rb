@@ -13,11 +13,11 @@ class JaNetfilter < Formula
   end
 
   def post_install
-    system_command "#{HOMEBREW_PREFIX}/ja-netfilter/scripts/install.sh", sudo: true
+    system_command libexec"/scripts/install.sh", sudo: true
   end
 
   def pre_uninstall
-    system_command "#{HOMEBREW_PREFIX}/ja-netfilter/scripts/uninstall.sh", sudo: true
+    system_command libexec"/scripts/uninstall.sh", sudo: true
   end
 
 end
