@@ -14,7 +14,7 @@ class JaNetfilter < Formula
 
   def post_install
     system "echo \"请执行：`bash #{opt_libexec}/scripts/install.sh`\""
-    system "echo \"卸载之前请执行：`bash #{opt_libexec}/scripts/uninstall.sh`\""
+    system "echo \"卸载之前执行：`bash #{opt_libexec}/scripts/uninstall.sh`\""
   end
 
 end
