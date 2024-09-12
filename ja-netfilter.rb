@@ -11,25 +11,14 @@ class JaNetfilter < Formula
   url "https://cikaros.top:443/ja-netfilter#dl.zip", using: CurlDownloadStrategy, output: "ja-netfilter.zip"
   sha256 "0ec13c9ea7a53e8fbb317cd3e08e989ea0dc3ad02c590ad4d36a68ab1cd71800"
 
-  def install
-    # 解压 .zip 文件
-    system "unzip", "ja-netfilter.zip", "-d ja-netfilter/"
+  postflight do
+    system_command "#{HOMEBREW_PREFIX}/ja-netfilter/scripts/install.sh",
+                   sudo: true
   end
 
-  # 定义一个方法来在卸载前执行脚本
-  def pre_uninstall
-    # 确保脚本存在
-    if File.exist?("#{prefix}/ja-netfilter/scripts/uninstall.sh")
-      system "bash", "#{prefix}/ja-netfilter/scripts/uninstall.sh"
-    end
-  end
-
-  # 将卸载前的脚本复制到prefix目录
-  def post_install
-    # 确保脚本存在
-    if File.exist?("#{prefix}/ja-netfilter/scripts/install.sh")
-      system "bash", "#{prefix}/ja-netfilter/scripts/install.sh"
-    end
+  uninstall_preflight do
+    system_command "#{HOMEBREW_PREFIX}/ja-netfilter/scripts/uninstall.sh",
+                   sudo: true
   end
 
 end
