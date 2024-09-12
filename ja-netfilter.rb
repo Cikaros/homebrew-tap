@@ -5,7 +5,6 @@ class JaNetfilter < Formula
 
 
   url "https://cikaros.top:443/ja-netfilter#dl.zip"
-  name "ja-netfilter"
   desc "JetBrains' dragon slayer"
   homepage "https://cikaros.top"
 
