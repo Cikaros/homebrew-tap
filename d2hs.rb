@@ -13,20 +13,27 @@ class D2hs < Formula
 
   def install
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DCURL_LIBRARY=#{Formula["curl"].opt_lib}", "-DCURL_INCLUDE_DIR=#{Formula["curl"].opt_include}"
+      system "cmake", "..", *std_cmake_args, "-DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}", "-DCMAKE_INSTALL_PREFIX=/usr/local"
       system "make"
-      system "make", "install"
+      bin.install "d2hs"
     end
   end
 
   service do
     run [opt_bin/"d2hs"]
-    keep_alive true
-    log_path var/"log/d2hs.log"
-    error_log_path var/"log/d2hs-error.log"
+    run_type :interval
+    interval 600
+  end
+
+  def caveats
+    # 提供额外的说明，例如如何卸载定时任务
+    <<~EOS
+    定时任务已设置，每10分钟执行一次。
+    注意：请编写配置文件到`/etc/d2hs/d2hs.json`后通过`brew services start d2hs`启动服务。
+    EOS
   end
 
   test do
-    system bin/"d2hs", "--version"
+    system bin/"d2hs", "-h"
   end
 end
