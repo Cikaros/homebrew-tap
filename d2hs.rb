@@ -23,6 +23,8 @@ class D2hs < Formula
     run [opt_bin/"d2hs"]
     run_type :interval
     interval 600
+    log_path var/"log/d2hs.log"
+    error_log_path var/"log/d2hs-error.log"
   end
 
   def caveats
