@@ -1,7 +1,7 @@
 class D2hs < Formula
   desc "Small tools for syncing DNS Records with hosts file"
   homepage "https://github.com/Neboer/DNS2HostsSyncer"
-  url "https://github.com/Neboer/DNS2HostsSyncer/archive/refs/tags/v2.3.tar.gz"
+  url "https://github.com/Neboer/DNS2HostsSyncer/archive/refs/tags/v4.1.tar.gz"
   sha256 "aebb498656efd57afc674fe7fcc72e6b97c654d2cb29a1a614f8b3338d8575e6"
   license "MIT"
 
