@@ -2,7 +2,7 @@ class D2hs < Formula
   desc "Small tools for syncing DNS Records with hosts file"
   homepage "https://github.com/Neboer/DNS2HostsSyncer"
   url "https://github.com/Neboer/DNS2HostsSyncer/archive/refs/tags/v4.1.tar.gz"
-  sha256 "aebb498656efd57afc674fe7fcc72e6b97c654d2cb29a1a614f8b3338d8575e6"
+  sha256 "63832e9574420473ac2a2e3a35716a1bccf69ef90864d890b79869e981c0e1f3"
   license "MIT"
 
   depends_on "cmake" => :build
