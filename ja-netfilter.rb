@@ -57,6 +57,19 @@ class JaNetfilter < Formula
     keep_alive true
     log_path var/"log/ja-netfilter.log"
     error_log_path var/"log/ja-netfilter.err.log"
+    working_directory opt_prefix
+    name "JetBrains Agent"
+    description "JetBrains' dragon slayer"
+  end
+
+  def uninstall
+    # Uninstall the service plist file
+    system "launchctl", "unload", "#{HOMEBREW_PREFIX}/etc/launchd.conf.d/homebrew.mxcl.ja-netfilter.plist"
+    system "rm", "#{HOMEBREW_PREFIX}/etc/launchd.conf.d/homebrew.mxcl.ja-netfilter.plist"
+
+    # Clean up log files
+    rm_rf "#{var}/log/ja-netfilter.log"
+    rm_rf "#{var}/log/ja-netfilter.err.log"
   end
 
 end
