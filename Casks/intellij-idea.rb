@@ -2,7 +2,7 @@ cask "intellij-idea" do
     arch arm: "-aarch64"
   
     version "2024.1.7,241.19416.15"
-    sha256 arm:   "8cf632fbb89e6dfbd2a536643450e6ae6671001348461260fe0132ed14ef3d0c",
+    sha256 arm:   "cac74ced4b15614628c4c21edb49ad58a4786df6077cfa83ed86a96f6d0f967e",
            intel: "8b50dd9783c6f8dde229606a4e2d1d0e4ce95f0db33502053ed957fd532bcc35"
   
     url "https://download.jetbrains.com/idea/ideaIU-#{version.csv.first}#{arch}.dmg"
