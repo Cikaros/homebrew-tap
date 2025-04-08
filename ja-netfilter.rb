@@ -13,11 +13,11 @@ class JaNetfilter < Formula
   end
 
   def post_install 
-    eval libexec/"scripts/install.sh"
+    eval "#{opt_libexec}/scripts/install.sh"
   end
 
   uninstall script: {
-    executable: libexec/"scripts/uninstall.sh",
+    executable: "#{opt_libexec}/scripts/uninstall.sh",
     sudo:       true,
   }
 
