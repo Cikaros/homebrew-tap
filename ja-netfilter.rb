@@ -24,23 +24,23 @@ class JaNetfilter < Formula
           <string>sh</string>
           <string>-c</string>
           <string>
-            launchctl setenv "IDEA_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/idea.vmoptions";
-            launchctl setenv "CLION_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/clion.vmoptions";
-            launchctl setenv "PHPSTORM_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/phpstorm.vmoptions";
-            launchctl setenv "GOLAND_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/goland.vmoptions";
-            launchctl setenv "PYCHARM_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/pycharm.vmoptions";
-            launchctl setenv "WEBSTORM_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/webstorm.vmoptions";
-            launchctl setenv "WEBIDE_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/webide.vmoptions";
-            launchctl setenv "RIDER_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/rider.vmoptions";
-            launchctl setenv "DATAGRIP_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/datagrip.vmoptions";
-            launchctl setenv "RUBYMINE_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/rubymine.vmoptions";
-            launchctl setenv "APPCODE_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/appcode.vmoptions";
-            launchctl setenv "DATASPELL_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/dataspell.vmoptions";
-            launchctl setenv "GATEWAY_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/gateway.vmoptions";
-            launchctl setenv "JETBRAINS_CLIENT_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/jetbrains_client.vmoptions";
-            launchctl setenv "JETBRAINSCLIENT_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/jetbrainsclient.vmoptions";
-            launchctl setenv "STUDIO_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/studio.vmoptions";
-            launchctl setenv "DEVECOSTUDIO_VM_OPTIONS" "#{opt_prefix}/libexec/vmoptions/devecostudio.vmoptions";
+            launchctl setenv "IDEA_VM_OPTIONS" "#{opt_prefix}/vmoptions/idea.vmoptions";
+            launchctl setenv "CLION_VM_OPTIONS" "#{opt_prefix}/vmoptions/clion.vmoptions";
+            launchctl setenv "PHPSTORM_VM_OPTIONS" "#{opt_prefix}/vmoptions/phpstorm.vmoptions";
+            launchctl setenv "GOLAND_VM_OPTIONS" "#{opt_prefix}/vmoptions/goland.vmoptions";
+            launchctl setenv "PYCHARM_VM_OPTIONS" "#{opt_prefix}/vmoptions/pycharm.vmoptions";
+            launchctl setenv "WEBSTORM_VM_OPTIONS" "#{opt_prefix}/vmoptions/webstorm.vmoptions";
+            launchctl setenv "WEBIDE_VM_OPTIONS" "#{opt_prefix}/vmoptions/webide.vmoptions";
+            launchctl setenv "RIDER_VM_OPTIONS" "#{opt_prefix}/vmoptions/rider.vmoptions";
+            launchctl setenv "DATAGRIP_VM_OPTIONS" "#{opt_prefix}/vmoptions/datagrip.vmoptions";
+            launchctl setenv "RUBYMINE_VM_OPTIONS" "#{opt_prefix}/vmoptions/rubymine.vmoptions";
+            launchctl setenv "APPCODE_VM_OPTIONS" "#{opt_prefix}/vmoptions/appcode.vmoptions";
+            launchctl setenv "DATASPELL_VM_OPTIONS" "#{opt_prefix}/vmoptions/dataspell.vmoptions";
+            launchctl setenv "GATEWAY_VM_OPTIONS" "#{opt_prefix}/vmoptions/gateway.vmoptions";
+            launchctl setenv "JETBRAINS_CLIENT_VM_OPTIONS" "#{opt_prefix}/vmoptions/jetbrains_client.vmoptions";
+            launchctl setenv "JETBRAINSCLIENT_VM_OPTIONS" "#{opt_prefix}/vmoptions/jetbrainsclient.vmoptions";
+            launchctl setenv "STUDIO_VM_OPTIONS" "#{opt_prefix}/vmoptions/studio.vmoptions";
+            launchctl setenv "DEVECOSTUDIO_VM_OPTIONS" "#{opt_prefix}/vmoptions/devecostudio.vmoptions";
           </string>
         </array>
         <key>RunAtLoad</key>
@@ -51,7 +51,7 @@ class JaNetfilter < Formula
   end
 
   def post_install
-    vmoptions_dir = "#{libexec}/vmoptions"
+    vmoptions_dir = "#{opt_prefix}/vmoptions"
     if File.directory?(vmoptions_dir)
       Dir.glob("#{vmoptions_dir}/*.vmoptions").each do |file|
         inreplace file, /^\-javaagent:.*[\/\\]ja\-netfilter\.jar.*/, ""
