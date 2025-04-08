@@ -1,7 +1,7 @@
 cask "datagrip" do
   arch arm: "-aarch64"
 
-  version "22024.1.5,241.19072.24"
+  version "2024.1.5,241.19072.24"
 
   url "https://download.jetbrains.com/datagrip/datagrip-#{version.csv.first}#{arch}.dmg"
   name "DataGrip"
