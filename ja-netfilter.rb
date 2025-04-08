@@ -12,7 +12,7 @@ class JaNetfilter < Formula
     libexec.install Dir["*"]
   end
 
-  post_install script: {
+  def post_install script: {
     executable: libexec/"scripts/install.sh",
     sudo:       true,
   }
