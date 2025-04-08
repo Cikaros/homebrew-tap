@@ -58,7 +58,6 @@ class JaNetfilter < Formula
     log_path var/"log/ja-netfilter.log"
     error_log_path var/"log/ja-netfilter.err.log"
     name "JetBrains Agent"
-    description "JetBrains' dragon slayer"
   end
 
   def uninstall
