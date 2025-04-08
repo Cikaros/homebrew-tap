@@ -54,7 +54,16 @@ class JaNetfilter < Formula
     vmoptions_dir = "#{opt_prefix}/vmoptions"
     if File.directory?(vmoptions_dir)
       Dir.glob("#{vmoptions_dir}/*.vmoptions").each do |file|
-        inreplace file, /^\-javaagent:.*[\/\\]ja\-netfilter\.jar.*/, ""
+        contents = File.read(file)
+
+        # Remove existing -javaagent line
+        new_contents = contents.gsub(/^\-javaagent:.*[\/\\]ja\-netfilter\.jar.*/, "")
+
+        # Append new -javaagent line
+        new_contents += "\n-javaagent:#{opt_prefix}/ja-netfilter.jar=jetbrains\n"
+
+        # Write the modified content back to the file
+        File.open(file, "w") { |f| f.write(new_contents) }
       end
     else
       ohai "VM options directory not found: #{vmoptions_dir}"
