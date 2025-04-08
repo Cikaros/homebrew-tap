@@ -57,7 +57,6 @@ class JaNetfilter < Formula
     keep_alive true
     log_path var/"log/ja-netfilter.log"
     error_log_path var/"log/ja-netfilter.err.log"
-    working_directory opt_prefix
     name "JetBrains Agent"
     description "JetBrains' dragon slayer"
   end
