@@ -57,7 +57,7 @@ class JaNetfilter < Formula
     keep_alive true
     log_path var/"log/ja-netfilter.log"
     error_log_path var/"log/ja-netfilter.err.log"
-    name "JetBrains Agent"
+    name macos: "homebrew.mxcl.ja-netfilter"
   end
 
   def uninstall
