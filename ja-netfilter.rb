@@ -12,6 +12,17 @@ class JaNetfilter < Formula
     prefix.install Dir["*"]
   end
 
+  def post_install
+    vmoptions_dir = "#{prefix}/libexec/vmoptions"
+    if File.directory?(vmoptions_dir)
+      Dir.glob("#{vmoptions_dir}/*.vmoptions").each do |file|
+        inreplace file, /^\-javaagent:.*[\/\\]ja\-netfilter\.jar.*/, ""
+      end
+    else
+      ohai "VM options directory not found: #{vmoptions_dir}"
+    end
+  end
+
   service do
     run ["/bin/sh", "-c",
          %Q[
