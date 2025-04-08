@@ -13,10 +13,10 @@ class JaNetfilter < Formula
   end
 
   post_install script: {
-    executable: "#{opt_libexec}/scripts/install.sh",
+    executable: libexec/"scripts/install.sh",
     sudo:       true,
   }
-  
+
   uninstall script: {
     executable: "#{opt_libexec}/scripts/uninstall.sh",
     sudo:       true,
