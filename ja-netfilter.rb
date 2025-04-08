@@ -1,7 +1,7 @@
 class JaNetfilter < Formula
   
   version "latest"
-  sha256 "1d03ddc5ae841831a02d19623b50bb7ac6d874b9eeb72bd3eb44d65ddb63e07b"
+  sha256 "679897a08b187d783cf7abea1cdd85752f5148404b0fab53de1d4a9b5db7a77c"
 
 
   url "https://cikaros.top:443/ja-netfilter#dl.zip"
