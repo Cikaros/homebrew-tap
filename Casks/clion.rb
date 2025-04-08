@@ -2,6 +2,7 @@ cask "clion" do
   arch arm: "-aarch64"
 
   version "2024.1.6,241.19416.21"
+  sha256 :no_check
 
   url "https://download.jetbrains.com/cpp/CLion-#{version.csv.first}#{arch}.dmg"
   name "CLion"

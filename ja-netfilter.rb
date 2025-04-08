@@ -12,9 +12,14 @@ class JaNetfilter < Formula
     libexec.install Dir["*"]
   end
 
-  def post_install
-    system "echo \"请执行：`bash #{opt_libexec}/scripts/install.sh`\""
-    system "echo \"卸载之前执行：`bash #{opt_libexec}/scripts/uninstall.sh`\""
-  end
+  post_install script: {
+    executable: "#{opt_libexec}/scripts/install.sh",
+    sudo:       true,
+  }
+  
+  uninstall script: {
+    executable: "#{opt_libexec}/scripts/uninstall.sh",
+    sudo:       true,
+  }
 
 end
