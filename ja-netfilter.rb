@@ -60,6 +60,16 @@ class JaNetfilter < Formula
     name macos: "homebrew.mxcl.ja-netfilter"
   end
 
+  def caveats
+    <<~EOS
+      To restart cikaros/tap/ja-netfilter after an upgrade:
+        brew services restart cikaros/tap/ja-netfilter
+      
+      升级后请重新启动 cikaros/tap/ja-netfilter :
+        brew services restart cikaros/tap/ja-netfilter
+    EOS
+  end
+
   def uninstall
     # Uninstall the service plist file
     system "launchctl", "unload", "#{HOMEBREW_PREFIX}/etc/launchd.conf.d/homebrew.mxcl.ja-netfilter.plist"
