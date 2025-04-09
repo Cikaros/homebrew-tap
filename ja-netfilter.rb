@@ -31,7 +31,7 @@ class JaNetfilter < Formula
       ohai "VM options directory not found: #{vmoptions_dir}"
     end
 
-    system "launchctl", "load", "#{HOMEBREW_PREFIX}/etc/launchd.conf.d/homebrew.mxcl.ja-netfilter.plist"
+    system "launchctl", "load", "#{opt_prefix}/homebrew.mxcl.ja-netfilter.plist"
   end
 
   service do
@@ -73,8 +73,7 @@ class JaNetfilter < Formula
 
   def uninstall
     # Uninstall the service plist file
-    system "launchctl", "unload", "#{HOMEBREW_PREFIX}/etc/launchd.conf.d/homebrew.mxcl.ja-netfilter.plist"
-    system "rm", "#{HOMEBREW_PREFIX}/etc/launchd.conf.d/homebrew.mxcl.ja-netfilter.plist"
+    system "launchctl", "unload", "#{opt_prefix}/homebrew.mxcl.ja-netfilter.plist"
 
     # Clean up log files
     rm_rf "#{var}/log/ja-netfilter.log"
