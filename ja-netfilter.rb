@@ -1,12 +1,9 @@
 class JaNetfilter < Formula
   
   version "latest"
-  sha256 "679897a08b187d783cf7abea1cdd85752f5148404b0fab53de1d4a9b5db7a77c"
 
-
-  url "https://cikaros.top:443/ja-netfilter#dl.zip"
+  url "https://jetbrains.cikaros.local/ja-netfilter#dl.zip"
   desc "JetBrains' dragon slayer"
-  homepage "https://cikaros.top"
 
   def install
     prefix.install Dir["*"]
