@@ -1,7 +1,7 @@
 cask "goland" do
   arch arm: "-aarch64"
 
-  version "2024.1.6,241.19072.18"
+  version "2024.3.6,243.26574.98"
   sha256 :no_check
 
   url "https://download.jetbrains.com/go/goland-#{version.csv.first}#{arch}.dmg"

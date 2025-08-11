@@ -1,7 +1,7 @@
 cask "intellij-idea" do
     arch arm: "-aarch64"
   
-    version "2024.1.7,241.19416.15"
+    version "2024.3.6,243.26574.91"
     sha256 :no_check
   
     url "https://download.jetbrains.com/idea/ideaIU-#{version.csv.first}#{arch}.dmg"

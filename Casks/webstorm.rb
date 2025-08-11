@@ -1,7 +1,7 @@
 cask "webstorm" do
   arch arm: "-aarch64"
 
-  version "2024.1.7,241.19416.2"
+  version "2024.3.6,243.26574.96"
   sha256 :no_check
 
   url "https://download.jetbrains.com/webstorm/WebStorm-#{version.csv.first}#{arch}.dmg"
