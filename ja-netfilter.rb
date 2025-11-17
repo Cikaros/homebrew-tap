@@ -2,7 +2,7 @@ class JaNetfilter < Formula
   
   version "latest"
 
-  url "https://jetbrains.cikaros.local/ja-netfilter#dl.zip"
+  url "http://jetbrains.cikaros.local/ja-netfilter#dl.zip"
   desc "JetBrains' dragon slayer"
 
   def install
