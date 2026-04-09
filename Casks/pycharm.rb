@@ -1,7 +1,7 @@
 cask "pycharm" do
   arch arm: "-aarch64"
 
-  version "2024.3.6,243.26574.90"
+  version "2025.3.4,253.32098.74"
   sha256 :no_check
 
   url "https://download.jetbrains.com/python/pycharm-professional-#{version.csv.first}#{arch}.dmg"
