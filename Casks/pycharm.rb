@@ -24,10 +24,18 @@ cask "pycharm" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "PyCharm.app"
-  binary "#{appdir}/PyCharm.app/Contents/MacOS/pycharm"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/pycharm.wrapper.sh"
+  binary shimscript, target: "pycharm"
+
+  preflight do
+    File.write shimscript, <<~EOS
+      #!/bin/sh
+      exec '#{appdir}/PyCharm.app/Contents/MacOS/pycharm' "$@"
+    EOS
+  end
 
   zap trash: [
     "~/Library/Application Support/JetBrains/PyCharm#{version.major_minor}",
@@ -35,6 +43,8 @@ cask "pycharm" do
     "~/Library/Caches/JetBrains/PyCharm#{version.major_minor}",
     "~/Library/Logs/JetBrains/PyCharm#{version.major_minor}",
     "~/Library/Preferences/com.jetbrains.pycharm.plist",
+    "~/Library/Preferences/jetbrains.pc.*.plist",
+    "~/Library/Preferences/jetbrains.py.*.plist",
     "~/Library/Preferences/jetbrains.pycharm.*.plist",
     "~/Library/Preferences/PyCharm#{version.major_minor}",
     "~/Library/Saved Application State/com.jetbrains.pycharm.savedState",
