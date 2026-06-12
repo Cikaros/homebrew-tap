@@ -23,7 +23,6 @@ cask "goland" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "GoLand.app"
   binary "#{appdir}/GoLand.app/Contents/MacOS/goland"
