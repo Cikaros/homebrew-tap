@@ -23,7 +23,6 @@ cask "datagrip" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "DataGrip.app"
   binary "#{appdir}/DataGrip.app/Contents/MacOS/datagrip"
